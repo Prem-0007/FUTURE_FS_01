@@ -514,6 +514,13 @@ footer{
   text-align:center;
   opacity:0.6;
 }
+footer{
+  position: relative;
+  width: 100%;
+  padding: 25px 0;
+  text-align: center;
+  opacity: 0.6;
+}
 h2{text-align: center; margin-top: 50px;}
 @media (max-width: 768px) {
 
