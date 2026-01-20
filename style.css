@@ -538,3 +538,6 @@ h2{text-align: center; margin-top: 50px;}
     box-shadow: 0 0 12px violet, 0 0 8px pink;
   }
 }
+button i {
+  font-size: 20px;
+}
