@@ -539,6 +539,7 @@ h2{text-align: center; margin-top: 50px;}
   }
 }
 button i {
-  font-size: 20px;
-margin-right:10px;
+  display: inline-block;
+  margin-right: 12px !important;
+font-size: 20px;
 }
