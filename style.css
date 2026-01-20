@@ -468,6 +468,9 @@ button::after{
 #contact{
   padding-top:20px;
 }
+#contact{
+  padding-bottom: 120px;
+}
 #contact h2{
   margin-bottom:25px;
   font-size:35px;
@@ -509,15 +512,12 @@ textarea{
 }
 
 
-footer{
-  padding:30px;
-  text-align:center;
-  opacity:0.6;
-}
+
 footer{
   position: relative;
   width: 100%;
-  padding: 25px 0;
+  margin-top: 60px;
+  padding: 30px 0;
   text-align: center;
   opacity: 0.6;
 }
