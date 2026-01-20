@@ -47,5 +47,6 @@ function onScroll() {
 }
 
 window.addEventListener("scroll", onScroll);
-// Run immediately on load to set the initial state
+
+
 document.addEventListener("DOMContentLoaded", onScroll);
