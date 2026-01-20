@@ -515,3 +515,26 @@ footer{
   opacity:0.6;
 }
 h2{text-align: center; margin-top: 50px;}
+@media (max-width: 768px) {
+
+  nav {
+    padding: 4px 0;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav li a {
+    padding: 8px 12px;   
+    font-size: 13px;    
+    letter-spacing: 0.5px;
+    text-shadow: none;   
+  }
+
+  .nav-link.active {
+    border-radius: 14px;
+    box-shadow: 0 0 12px violet, 0 0 8px pink;
+  }
+}
