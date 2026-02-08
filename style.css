@@ -505,7 +505,29 @@ padding: 25px 0;
 text-align: center;
 opacity: 0.6;
 }
+.footer-card {
+  width: 100%;
+  margin: 120px auto 0;
+}
 
+#footer {
+  padding: 35px 0;
+  text-align: center;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 25px 0;
+  opacity: 0.75;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+}
+
+footer p {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
 h2{text-align: center; margin-top: 50px;}
 @media (max-width: 768px) {
 
