@@ -436,7 +436,7 @@ width: 400px;
 max-width: 90%;
 margin: 90px auto;
 padding: 40px 50px;
-margin-bottom:120px;
+
 background: rgba(255, 255, 255, 0.08);
 backdrop-filter: blur(14px);
 -webkit-backdrop-filter: blur(14px);
@@ -451,7 +451,7 @@ position: relative;
 }
 #contact{
 padding-top:20px;
-padding-bottom:140px;
+
 }
 #contact h2{
 margin-bottom:25px;
