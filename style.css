@@ -557,3 +557,7 @@ display: inline-block;
 margin-right: 12px !important;
 font-size: 20px;
 }
+#contact,
+#footer {
+  min-height: auto;
+}
