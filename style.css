@@ -561,3 +561,11 @@ font-size: 20px;
 #footer {
   min-height: auto;
 }
+#contact {
+  min-height: auto !important;
+  padding-bottom: 0;
+}
+
+.contact-card {
+  margin-bottom: 40px;
+}
