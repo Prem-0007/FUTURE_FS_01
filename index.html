@@ -7,6 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Montserrat&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("pek9SFck_5fDK5zz9"); // YOUR PUBLIC KEY
+  })();
+</script>
 </head>
 <body>
 
@@ -294,41 +301,57 @@
 
 
  
-     
+ 
+
 <section id="contact" class="reveal">
- <div class="contact-card">
-  <h2>Contact Me</h2>
+  <div class="contact-card">
 
-  <form onsubmit="sendMail(event)">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <textarea id="message" placeholder="Your Message" required></textarea>
+    <h2>Contact Me</h2>
 
-     <button class="blue" type="submit">
-      <i class="fa-solid fa-envelope"></i>
-      Send Mail
-    </button>
-  </form>
+    <form id="contact-form" onsubmit="sendMail(event)">
+      <input
+        type="text"
+        name="from_name"
+        id="name"
+        placeholder="Your Name"
+        required
+      >
 
-  <div class="links">
-   
-    <button class="green" onclick="openLink('https://github.com/Prem-0007')">
-      <i class="fa-brands fa-github"></i>
-      GitHub
-    </button>
+      <input
+        type="email"
+        name="from_email"
+        id="email"
+        placeholder="Your Email"
+        required
+      >
 
-    
-    <button class="pink reverse" onclick="openLink('https://www.linkedin.com/in/prem-kumar-285068356')">
-      <i class="fa-brands fa-linkedin"></i>
-      LinkedIn
-    </button>
+      <textarea
+        name="message"
+        id="message"
+        placeholder="Your Message"
+        required
+      ></textarea>
+
+      <button class="blue" type="submit">
+        <i class="fa-solid fa-envelope"></i>
+        Send Mail
+      </button>
+    </form>
+
+    <div class="links">
+      <button class="green" onclick="openLink('https://github.com/Prem-0007')">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </button>
+
+      <button class="pink reverse" onclick="openLink('https://www.linkedin.com/in/prem-kumar-285068356')">
+        <i class="fa-brands fa-linkedin"></i>
+        LinkedIn
+      </button>
+    </div>
+
   </div>
-
-
-
 </section>
-
-
 
 
 <div class ="footer-card">
@@ -343,33 +366,40 @@
 </div>
 
 
-
-
 <script>
-function openLink(url){
+function openLink(url) {
   window.open(url, "_blank");
 }
 
-function sendMail(e){
+function sendMail(e) {
   e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+  const btn = e.target.querySelector("button");
+  btn.innerHTML = "Sending...";
+  btn.disabled = true;
 
-  const subject = `Portfolio Contact from ${name}`;
-  const body =
-    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-
-  const gmailURL =
-    "https://mail.google.com/mail/?view=cm&fs=1" +
-    "&to=premkumarballa777@gmail.com" +
-    "&su=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
-
-  window.open(gmailURL, "_blank");
+  emailjs.sendForm(
+    "service_gy0yjca",   // Service ID
+    "template_tp292bw",  // Template ID
+    document.getElementById("contact-form"),
+    "pek9SFck_5fDK5zz9"  // Public Key
+  )
+  .then(() => {
+    alert("Message sent successfully ✅");
+    document.getElementById("contact-form").reset();
+  })
+  .catch((error) => {
+    alert("Failed to send ❌");
+    console.error(error);
+  })
+  .finally(() => {
+    btn.innerHTML = '<i class="fa-solid fa-envelope"></i> Send Mail';
+    btn.disabled = false;
+  });
 }
 </script>
+
+
 <script src="script.js"></script>
 </body>
 </html>
